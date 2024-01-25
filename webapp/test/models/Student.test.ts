@@ -1,6 +1,6 @@
 import { describe, expect, it, test } from "@jest/globals";
 import { IPerson, HOBBY } from "../../src/models/IPerson";
-import { IStudent } from "../../src/models/IStudent";
+import { IStudentInfo } from "../../src/models/IStudent";
 import { Student } from "../../src/models/Student";
 import { InvalidOperationException } from "../../src/models/InvalidOperationException";
 
@@ -10,19 +10,18 @@ describe("General test for Student Class", () => {
 
   beforeEach(() => {
     //console.log("beforeeach is called");
-    let studentaInfo: IStudent = {
-      studentName:"solen",
+    let studentaInfo: IStudentInfo = {
       studentID: 1234,
       grade: 69,
     };
-    cutStudent = new Student( studentaInfo) as IPerson;
+    cutStudent = new Student("Solen",studentaInfo) as IPerson;
   });
 
   afterEach(() => {
     // console.log("aftereeach is called");
   });
 
-  describe.skip("Make sure Person attributes are set correctly", () => {
+  describe("Make sure Person attributes are set correctly", () => {
     it("should  have the right Name ", () => {
       //arrange
       let expected = "Solen";

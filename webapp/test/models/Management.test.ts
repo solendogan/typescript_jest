@@ -1,11 +1,10 @@
 import { Management } from "../../src/models/Management";
-import { IStudent } from "../../src/models/IStudent";
+import { IStudentInfo } from "../../src/models/IStudent";
 
 //Start learning Jest
 describe.skip("General test for Management Class", () => {
   let cutManagement: Management;
-  const studentaInfo: IStudent = {
-    studentName:"solen",
+  const studentaInfo: IStudentInfo = {
     studentID: 1234,
     grade: 69,
   };
@@ -24,7 +23,7 @@ describe.skip("General test for Management Class", () => {
       //arrange
       let expected = true;
       //act
-      Management.createStudent(studentaInfo);
+      Management.createStudent("solen",studentaInfo);
 
       let actual = Management.checkStudentAlreadyExists(studentaInfo);
 

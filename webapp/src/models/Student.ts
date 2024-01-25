@@ -1,14 +1,13 @@
 import { IPerson, HOBBY } from "./IPerson";
 import { Person } from "./Person";
 import { InvalidOperationException } from "./InvalidOperationException";
-import { IStudent } from "./IStudent";
-
+import { IStudentInfo } from "./IStudent";
 
 export class Student extends Person {
   private _studentID: number;
   private _grade: number;
-  constructor(studentDetails: IStudent) {
-    super(studentDetails.studentName);
+  constructor(readonly _name:string,studentDetails: IStudentInfo) {
+    super(_name);
     this._studentID = studentDetails.studentID;
     this._grade = studentDetails.grade;
   }
