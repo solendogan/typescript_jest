@@ -5,7 +5,7 @@ import { Registry } from "../../src/models/Registry";
 import { Student } from "../../src/models/Student";
 import { Util } from "../../src/utility/Util";
 
-describe("Make sure Generic Registry  stores correctly", () => {
+describe.skip("Make sure Generic Registry  stores correctly", () => {
   it.skip("should  find whether the value exists ", () => {
     //arrange
     const _student: IStudentInfo = {

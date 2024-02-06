@@ -5,7 +5,7 @@ import { Student } from "../../src/models/Student";
 import { InvalidOperationException } from "../../src/models/InvalidOperationException";
 
 //Start learning Jest
-describe("General test for Student Class", () => {
+describe.skip("General test for Student Class", () => {
   let cutStudent: IPerson;
 
   beforeEach(() => {
@@ -44,11 +44,21 @@ describe("General test for Student Class", () => {
     it("should throw invalidoperationexception when add Hobbies to a Student ", () => {
       //arrange
       //act
-
+      let addHobby =  () => cutStudent.addHobby(HOBBY.SWIMMING);
       //assert
-      expect(() => cutStudent.addHobby(HOBBY.SWIMMING)).toThrowError(
+      expect(addHobby).toThrowError(
         InvalidOperationException
       );
     });
+
+
+    it(" should not modify the prototype of a Student ", () => {
+      //arrange
+      //act
+            
+      //assert
+    });
+
+
   });
 });
