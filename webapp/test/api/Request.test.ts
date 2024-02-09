@@ -1,5 +1,5 @@
 
-import { Request } from "../../src/api/Request";
+import { Request, testJsonPlaceHolder } from "../../src/api/Request";
 
 //Start learning Jest
 describe("General test for Request Class", () => {
@@ -20,13 +20,12 @@ describe("General test for Request Class", () => {
             completed: false
         };
         //act
-
         let result =  await Request.getTodoFromJsonPlaceholder(1);
         //assert
         expect(result).toStrictEqual(expected);
     });
 
-    it.skip("should  return the correct Swapi Person ", async () => {
+    it("should  return the correct Swapi Person ", async () => {
         //arrange
         let expected = "Luke Skywalker";
         //act
